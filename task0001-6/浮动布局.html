@@ -7,7 +7,6 @@
 	<style type="text/css">
 		.main{
 			background-color:red;
-
         	overflow:hidden;
 		}
 		.child{
@@ -15,7 +14,9 @@
 			height:50px;
 			background-color:blue;
 			margin:10px;
-			float:left;
+			/*float:left;*/   /*第一种方式，不过如果后面有其他元素，将会环绕在浮动元素周围*/
+			display:inline-block;/*另一种方式，后面的元素不会环绕在浮动元素周围*/
+			/*IE6,IE7不支持inline-block,会触发hasLayout*/
 		}
 	</style>
 </head>
