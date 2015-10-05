@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+	<title>浮动布局</title>
+	<!--实现一个浮动布局，红色容器中每一行的蓝色容器数量随着浏览器宽度的变化而变化 -->
+<head>
+	<style type="text/css">
+		.main{
+			background-color:red;
+
+        	overflow:hidden;
+		}
+		.child{
+			width:100px;
+			height:50px;
+			background-color:blue;
+			margin:10px;
+			float:left;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="child"></div>
+		<div class="child"></div>
+		<div class="child"></div>
+		<div class="child"></div>
+		<div class="child"></div>
+		<div class="child"></div>
+		<div class="child"></div>
+		<div class="child"></div>
+		<div class="child"></div>
+	</div>
+		
+</body>
+</html>
