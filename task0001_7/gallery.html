@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>我的作品</title>
+	<link rel="stylesheet" href="css/style.css" />
+	<style>
+		.rank{
+			width:100%;
+			height:27px;
+			margin-bottom:10px;
+		}
+		.rank_number{
+			width:22px;
+			height:22px;
+			background-color:#9999CC;
+			border-radius:50%;
+			display:inline-block;
+			text-align:center;
+			margin-right:10px;
+			color:white;
+		}
+		.bar_border{
+			width:100px;
+			height:22px;
+			display:inline-block;
+			border:1px solid;
+		}
+		.rank_bar{
+			height:22px;
+			background-color:#9999CC;
+			display:inline-block;
+			margin-right:20px;
+		}
+		.work_item{
+			margin-right:280px;
+			height:700px;
+			background-color:#ffffff;
+		}
+		.work_tab{
+			height:58px;
+		}
+		.work_tab ul{
+			padding-left:0;
+		}
+		.work_tab li{
+			list-style-type:none;
+			float:left;
+			padding:15px 20px;
+			border:1px solid #e6e6e6;
+			border-top:5px solid #92C0EF;
+			background-color:#ffffff;
+		}
+		.work_tab li:hover{
+			border-top-color:#000000;
+			background-color:#e1f1e1;
+		}
+		.work_tab a{
+			text-decoration: none;
+			color:#000000;
+			font-size:12px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<nav>
+			<h1>Andy</h1>
+				<ul class="navbar">
+					<li><a href="index.html">首页</a></li>
+				    <li><a href="blog.html">文章</a></li>
+					<li><a href="gallery.html">作品</a></li>
+					<li style="mergin-right:0;"><a href="#">关于</a></li>
+				</ul>
+		</nav>
+		<a href="http://www.github.com"><img src="img/icon-github.png" id="icon_github"/></a>
+	</header>
+	<div class="web_bg" style="height:1400px">
+		<div class="content" style="height:1400px;">
+			<div class="aside">
+				<div class="asidement" style="height:80px;margin-top:0;">
+					<form class="search">
+						<img src="img/search.jpg" width="40px" height="40px" />
+						<input type="text" placeholder="keywords" class="search_text" />
+						<input type="submit" value="GO" class="search_button" />
+					</form>
+				</div>
+				<div class="asidement" style="height:250px;padding:0 10px;">
+					<p >人气排行榜</p>
+					<div class="rank">
+						<span class="rank_number">1</span>
+						<span class="bar_border">
+							<span class="rank_bar" style="width:100%"></span>
+						</span>
+						<span>ui.tree</span>
+					</div>
+					<div class="rank">
+						<span class="rank_number">2</span>
+						<span class="bar_border">
+							<span class="rank_bar" style="width:80%"></span>
+						</span>
+						<span>util.trim</span>
+					</div>
+					<div class="rank">
+						<span class="rank_number">3</span>
+						<span class="bar_border">
+							<span class="rank_bar" style="width:70%"></span>
+						</span>
+						<span>app.todo</span>
+					</div>
+					<div class="rank">
+						<span class="rank_number">4</span>
+						<span class="bar_border">
+							<span class="rank_bar" style="width:60%"></span>
+						</span>
+						<span>ui.tab</span>
+					</div>
+					<div class="rank">
+						<span class="rank_number">5</span>
+						<span class="bar_border">
+							<span class="rank_bar" style="width:40%"></span>
+						</span>
+						<span>util.addClass</span>
+					</div>
+				</div>
+			</div>
+			<div class="work_tab">
+					<ul>
+						<li><a href="#">ALL</a></li>
+						<li style="border-top-color:#DFC6E6"><a href="#">Javascript Util Functions</a></li>
+						<li style="border-top-color:#D2A6FF"><a href="#">UI Components</a></li>
+						<li style="border-top-color:#FFA98C"><a href="#">Framework</a></li>
+						<li style="border-top-color:#FFE188"><a href="#">Applications</a></li>
+					</ul>
+			</div>
+			<div class="work_item">
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

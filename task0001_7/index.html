@@ -37,17 +37,9 @@
 		font-size:12px;
 		line-height:1.5em;
 	}
-	@media(max-width: 980px){
-		#icon_github{
-			display:none;
-		}
-	}
-
-	.grey_bg{
+	
+	.web_bg{
 		height:450px;
-		width:100%;
-		background-color:#e6e6e6;
-		overflow:hidden;
 	}
 	.news{
 		width:310px;
@@ -105,11 +97,11 @@
 	<header>
 		<nav>
 			<h1>Andy</h1>
-				<ul>
-					<li>首页</li>
-					<li>文章</li>
-					<li>作品</li>
-					<li>关于</li>
+				<ul class="navbar">
+					<li><a href="index.html">首页</a></li>
+				    <li><a href="blog.html">文章</a></li>
+					<li><a href="gallery.html">作品</a></li>
+					<li style="mergin-right:0;"><a href="#">关于</a></li>
 				</ul>
 		</nav>
 		<a href="http://www.github.com"><img src="img/icon-github.png" id="icon_github"/></a>
@@ -120,7 +112,7 @@
 			<p>&nbsp;&nbsp;&nbsp;&nbsp;苦逼码农一只，没有长长的自我介绍。苦逼码农一只，没有长长的自我介绍。苦逼码农一只，没有长长的自我介绍。苦逼码农一只，没有长长的自我介绍。苦逼码农一只，没有长长的自我介绍。苦逼码农一只，没有长长的自我介绍。苦逼码农一只，没有长长的自我介绍。</p>
 		</div>
 	</div>
-	<div class="grey_bg">
+	<div class="web_bg">
 		<div style="margin:0 auto;width:980px;">
 			<div class="news">
 				<img src="img/post-1.png" class="newsImg">
@@ -150,10 +142,10 @@
 	<footer>
 		<nav class="navbar">
 			<ul>
-				<li>首页</li>
-				<li>文章</li>
-				<li>作品</li>
-				<li>关于</li>
+				<li><a href="index.html">首页</a></li>
+				<li><a href="blog.html">文章</a></li>
+				<li><a href="gallery.html">作品</a></li>
+				<li><a href="#">关于</a></li>
 			</ul>
 		</nav>
 		<nav class="nav_cross">
