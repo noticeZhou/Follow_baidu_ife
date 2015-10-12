@@ -65,7 +65,7 @@
 		.article{
 			margin-top:20px;
 			margin-right:280px;
-			overflow:hidden;
+			position:relative;
 		}
 		.post{
 			width:100%;
@@ -73,6 +73,7 @@
 			background-color:#ffffff;
 			margin-bottom:20px;
 			position:relative;
+			z-index:1;
 		}
 		.page{
 			width:550px;
@@ -98,6 +99,10 @@
 			background-color:#9999CC;
 			text-align:center;
 			line-height:35px;
+			float:left;
+			margin-left:-50px;
+			margin-top:30px;
+			z-index:100;
 		}
 		.tip{
 			width:50px;
@@ -105,12 +110,23 @@
 			color:#ffffff;
 			background-color:#660099;
 			text-align:center;
+			float:left;
+			margin-left:-50px;
+			margin-top:65px;
 			line-height:35px;
+			z-index:100;
 		}
-		.date_tip{
-			position:absolute;
-			/*left:-50px;*/
-			top:30px;
+		.post_content{
+			padding:20px;
+		}
+		.post_content h3{
+			color:#660099;
+			font-size:16px;
+			line-height:2em;
+		}
+		.post_content p{
+			font-size:12px;
+			line-height:2em;
 		}
 	</style>
 </head>
@@ -122,7 +138,7 @@
 					<li><a href="index.html">首页</a></li>
 				    <li><a href="blog.html">文章</a></li>
 					<li><a href="gallery.html">作品</a></li>
-					<li style="mergin-right:0;"><a href="#">关于</a></li>
+					<li style="mergin-right:0;"><a href="about.html">关于</a></li>
 				</ul>
 		</nav>
 		<a href="http://www.github.com"><img src="img/icon-github.png" id="icon_github"/></a>
@@ -180,14 +196,28 @@
 			</div>
 			<div class="article">
 				<div class="post">
-					<div class="date_tip">
-						<div class="date">4.12</div>
-						<div class="tip">CSS</div>
+					<div class="date">4.12</div>
+					<div class="tip">CSS</div>
+					<div class="post_content">
+						<h3>这里是文章的标题</h3>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。</p>
 					</div>
 				</div>
-				<div class="post"></div>
-				<div class="post"></div>
-			</div>
+				<div class="post">
+					<div class="date">4.12</div>
+					<div class="tip">CSS</div>
+					<div class="post_content">
+						<h3>这里是文章的标题</h3>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。</p>
+					</div>
+				</div><div class="post">
+					<div class="date">4.12</div>
+					<div class="tip">CSS</div>
+					<div class="post_content">
+						<h3>这里是文章的标题</h3>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。这里是正文。</p>
+					</div>
+				</div>
 			<div class="page">
 				<ul>
 					<li class="page_number">上一页</li>
@@ -208,7 +238,7 @@
 				<li><a href="index.html">首页</a></li>
 				<li><a href="blog.html">文章</a></li>
 				<li><a href="gallery.html">作品</a></li>
-				<li><a href="#">关于</a></li>
+				<li><a href="about.html">关于</a></li>
 			</ul>
 		</nav>
 		<nav class="nav_cross">
