@@ -33,8 +33,6 @@ function cloneObject(src) {
     return tarObj;
 }
 
-
-
 // 对数组进行去重操作，只考虑数组中元素为数字或字符串，返回一个去重后的数组
 function uniqArray(arr) {
     // your implement
@@ -111,6 +109,7 @@ function isMobilePhone(phone) {
 // 为element增加一个样式名为newClassName的新样式
 function addClass(element, newClassName) {
     // your implement
+    element.className=newClassName;
 }
 
 // 移除element中的样式oldClassName
