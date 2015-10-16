@@ -1,14 +1,7 @@
 window.onload=function(){
 	// 使用示例
-	var obj = {
-	    a: 1,
-	    b: 2,
-	    c: {
-	        c1: 3,
-	        c2: 4
-	    }
-	};
-	console.log(getObjectLength(obj)); // 3
+	var arr = ['java', 'c', 'php', 'html'];
+    each(arr, output);  // 0:java, 1:c, 2:php, 3:html
 }
 
 // 判断arr是否为一个数组，返回一个bool值
@@ -76,8 +69,7 @@ function trim(str) {
 // 实现一个遍历数组的方法，针对数组中每一个元素执行fn函数，并将数组索引和元素作为参数传递
 function each(arr, fn) {
     // your implement
-    for(var i=0;i<arr.length;i++)
-    	output.call(this,arr[i],i);
+    return arr.map(fn);
 }
 
 // 其中fn函数可以接受两个参数：item和index
@@ -86,11 +78,11 @@ function output(item) {
 }
 
 // 使用示例
-var arr = ['java', 'c', 'php', 'html'];
+
 function output(item, index) {
     console.log(index + ': ' + item)
 }
-//each(arr, output);  // 0:java, 1:c, 2:php, 3:html
+
 
 // 获取一个对象里面第一层元素的数量，返回一个整数
 function getObjectLength(obj) {
@@ -105,9 +97,34 @@ function getObjectLength(obj) {
 // 判断是否为邮箱地址
 function isEmail(emailStr) {
     // your implement
+    var  re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    return re.test(emailStr);
 }
 
 // 判断是否为手机号
 function isMobilePhone(phone) {
     // your implement
+    var re = /^1{1}\d{10}$/;
+    return re.test(phone);
 }
+
+// 为element增加一个样式名为newClassName的新样式
+function addClass(element, newClassName) {
+    // your implement
+}
+
+// 移除element中的样式oldClassName
+function removeClass(element, oldClassName) {
+    // your implement
+}
+
+// 判断siblingNode和element是否为同一个父元素下的同一级的元素，返回bool值
+function isSiblingNode(element, siblingNode) {
+    // your implement
+}
+
+// 获取element相对于浏览器窗口的位置，返回一个对象{x, y}
+function getPosition(element) {
+    // your implement
+}
+// your implement

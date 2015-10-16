@@ -190,6 +190,9 @@
     var num2=num1.splice(1,1,4,5,6);//从位置1开始，删除1项，往数组num1中添加4,5,6
     console.log(num1);  //1,4,5,6,3
     console.log(num2);  //2
+
+    indexOf(search,fromIdex)，fromIdex默认为0，查找从fromIdex开始到数组结束，search在数组中的位置
+    map(callBack)，返回一个由原数组中的每个元素调用一个指定方法后的返回值组成的新数组
 #####2.4、Date类型
 #####2.5、RegExp类型
 ######2.5.1、正则表达式的匹配模式支持3个标志：
