@@ -1,7 +1,8 @@
 window.onload=function(){
 	// 使用示例
-	var arr = ['java', 'c', 'php', 'html'];
-    each(arr, output);  // 0:java, 1:c, 2:php, 3:html
+	var element = document.getElementsByTagName("div")[0];
+    var element2 = document.getElementsByTagName("div")[1];
+    console.log(isSiblingNode(element,element2));
 }
 
 // 判断arr是否为一个数组，返回一个bool值
@@ -109,17 +110,21 @@ function isMobilePhone(phone) {
 // 为element增加一个样式名为newClassName的新样式
 function addClass(element, newClassName) {
     // your implement
-    element.className=newClassName;
+    oldClassName = element.className;
+    element.className= !oldClassName? newClassName : oldClassName+" "+newClassName;
 }
 
 // 移除element中的样式oldClassName
 function removeClass(element, oldClassName) {
     // your implement
+    var re = RegExp("\\b"+oldClassName+"\\b");
+    element.className=element.className.replace(re,"");
 }
 
 // 判断siblingNode和element是否为同一个父元素下的同一级的元素，返回bool值
 function isSiblingNode(element, siblingNode) {
     // your implement
+    return element.parentNode == siblingNode.parentNode;
 }
 
 // 获取element相对于浏览器窗口的位置，返回一个对象{x, y}
