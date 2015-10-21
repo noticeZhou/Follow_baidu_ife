@@ -1,6 +1,6 @@
 window.onload=function(){
-	console.log(outputAttributes(document.getElementsByTagName("div")[0]));
-	textnode();
+	var element = document.getElementById("ids");
+	domCSS(element);
 }
 
 //将NodeList对象转成数组
@@ -110,4 +110,50 @@ function vaildLoop()
 		div = document.createElement("div");
 		document.body.appendChild(div);
 	}
+}
+
+function getElement()
+{
+	var idDiv = document.getElementById("id");
+	var div = document.getElementsByTagName("div")[0];
+    var nameDiv = document.getElementsByName("name")[0];
+
+    var idDiv = document.querySelector("#ids");
+    var classDiv = document.querySelector(".class")[0];//取得类为class的第一个元素
+
+    var classDivs = document.querySelectorAll(".class")[0];//返回一个nodeList对象
+
+    var html5Name = document.getElementsByClassName("class1 class2")[0];   //html5中定义的取得class类的方法，支持多个类名
+    console.log(html5Name);
+}
+
+function insertElement(element)
+{
+	element.outerHTML = "<p>this is a paragraph</p>";
+	//跟下面代码实现的效果一样
+	var p = document.createElement("p");
+	p.appendChild(document.createTextNode("This is a paragraph"));
+	element.parentNode.replaceChild(p,element);
+
+	element.insertAdjacentHTMl("beforebegin","<p>hello world</p>");
+	//作为前一个同胞节点插入
+	element.insertAdjacentHTMl("afterbegin","<p>hello world</p>");
+	//作为第一个子元素插入
+	element.insertAdjacentHTMl("beforeend","<p>hello world</p>");
+	//作为最后一个元素插入
+	element.insertAdjacentHTMl("afterend","<p>hello world</p>");
+	//作为后一个同辈元素插入
+}
+
+function domCSS(element)
+{
+    element.style.cssText="width:500px;height:250px";
+
+    for(var i=0,len = element.style.length;i<len;i++){
+    	//属性名
+       var prop = element.style[i];      //or element.style.item(i);
+       //属性值
+       var value = element.style.getPropertyValue(prop);
+       console.log(prop + ":" + value);
+    }
 }

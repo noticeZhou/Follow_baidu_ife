@@ -1,8 +1,9 @@
 window.onload=function(){
 	// 使用示例
-	var element = document.getElementsByTagName("div")[0];
-    var element2 = document.getElementsByTagName("div")[1];
-    console.log(isSiblingNode(element,element2));
+	//console.log($("#adom"));
+    //console.log($("a"));
+    //console.log($(".classa"));
+    console.log($("[data-time=2015]"));
 }
 
 // 判断arr是否为一个数组，返回一个bool值
@@ -110,15 +111,23 @@ function isMobilePhone(phone) {
 // 为element增加一个样式名为newClassName的新样式
 function addClass(element, newClassName) {
     // your implement
-    oldClassName = element.className;
-    element.className= !oldClassName? newClassName : oldClassName+" "+newClassName;
+    try{
+        element.classList.add(newClassName);
+    }catch(ex){
+        oldClassName = element.className;
+        element.className= !oldClassName? newClassName : oldClassName+" "+newClassName;
+    }
 }
 
 // 移除element中的样式oldClassName
 function removeClass(element, oldClassName) {
     // your implement
-    var re = RegExp("\\b"+oldClassName+"\\b");
-    element.className=element.className.replace(re,"");
+    try{
+        element.classList.remove(oldClassName);  //html5中新增的，classList属性，只有chrome和firefox3.6支持
+    }catch(ex){
+        var re = RegExp("\\b"+oldClassName+"\\b");
+        element.className=element.className.replace(re,"");
+    }
 }
 
 // 判断siblingNode和element是否为同一个父元素下的同一级的元素，返回bool值
@@ -130,5 +139,83 @@ function isSiblingNode(element, siblingNode) {
 // 获取element相对于浏览器窗口的位置，返回一个对象{x, y}
 function getPosition(element) {
     // your implement
+    var actualLeft = element.offsetLeft;
+    var actualTop = element.offsetTop;
+    var current = element.offsetParent;
+    
+    while(current !== null){
+        actualLeft += current.offsetLeft;
+        actualTop += current.offsetTop;         //元素绝对位置
+        current = current.offsetParent;
+    }
+    if (document.compatMode == "BackCompat"){
+        var elementScrollTop = document.body.scrollTop;     //滚动条
+        var elementScrollLeft = document.body.scrollLeft;
+　　} 
+    else {
+        var elementScrollTop = document.documentElement.scrollTop; 
+        var elementScrollLeft = document.documentElement.scrollLeft; 　
+    }
+    return{
+        x: actualLeft - elementScrollLeft,         //相对浏览器窗口的位置
+        y: actualTop - elementScrollTop
+    };
 }
-// your implement
+
+// 实现一个简单的Query
+function $(selector) {
+    var re_id = /^#/;
+    var re_class = /^\./;
+    var re_diy = /^\[data-\w+\]$/;
+    var re_diYoo = /^\[data-\w+=\w+\]$/;
+    if(re_id.test(selector)){
+        return document.getElementById(selector.replace(re_id,""));
+    }
+    else if(re_class.test(selector)){
+        return document.getElementsByClassName(selector.replace(re_class,""))[0];
+    }
+    else if(re_diy.test(selector)){
+        var s = selector.slice(1,selector.length-1);
+        var pairs = document.getElementsByTagName("*");
+        for(var i=0,len=pairs.length;i<len;i++){
+            for(var j=0,leng=pairs[i].attributes.length;j<leng;j++){
+                if(pairs[i].attributes[j].nodeName === s)
+                    return pairs[i];
+            } 
+        }
+    }
+    else if(re_diYoo.test(selector)){
+        var re_name = /=\w+\]/;
+        var re_value = /^\[data-\w+=/;
+        var attrName = selector.replace(re_name,"").slice(1);
+        var attrValue = selector.replace(re_value,"").slice(0,-1);
+        var pairs = document.getElementsByTagName("*");
+        for(var i=0,len=pairs.length;i<len;i++){
+            for(var j=0,leng=pairs[i].attributes.length;j<leng;j++){
+                if(pairs[i].attributes[j].nodeName === "data-time"  && pairs[i].attributes[j].value === "2015")
+                    return pairs[i];
+            } 
+        }
+    }
+    else{
+        return document.getElementsByTagName(selector)[0];
+    }
+}
+/*
+// 可以通过id获取DOM对象，通过#标示，例如
+$("#adom"); // 返回id为adom的DOM对象
+
+// 可以通过tagName获取DOM对象，例如
+$("a"); // 返回第一个<a>对象
+
+// 可以通过样式名称获取DOM对象，例如
+$(".classa"); // 返回第一个样式定义包含classa的对象
+
+// 可以通过attribute匹配获取DOM对象，例如
+$("[data-log]"); // 返回第一个包含属性data-log的对象
+
+$("[data-time=2015]"); // 返回第一个包含属性data-time且值为2015的对象
+
+// 可以通过简单的组合提高查询便利性，例如
+$("#adom .classa"); // 返回id为adom的DOM所包含的所有子节点中，第一个样式定义包含classa的对象
+*/
