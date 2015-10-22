@@ -1,11 +1,6 @@
 window.onload=function(){
 	// 使用示例
-	console.log($("#adom"));
-    console.log($("a"));
-    console.log($(".classa"));
-    //console.log($("[data-time=2015]"));
-    console.log($("[data-log]"));
-    console.log($("#adom .classa"));
+    addEvent($("img"), "dblclick", dblclicklistener);
 }
 
 // 判断arr是否为一个数组，返回一个bool值
@@ -162,6 +157,13 @@ function getPosition(element) {
         x: actualLeft - elementScrollLeft,         //相对浏览器窗口的位置
         y: actualTop - elementScrollTop
     };
+
+
+    /*return{
+        //简单的做法
+        x : element.getBoundingClientRect().left + Math.max(document.documentElement.scrollLeft, document.body.scrollLeft),
+        y : element.getBoundingClientRect().top + Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }*/
 }
 
 // 实现一个简单的Query
@@ -207,4 +209,50 @@ function $(selector) {
     else{                                                        // 可以通过tagName获取DOM对象，例如$("a");
         return document.getElementsByTagName(selector)[0];        // 返回第一个<a>对象
     } 
+}
+
+// 给一个element绑定一个针对event事件的响应，响应函数为listener
+function addEvent(element, event, listener) {
+    // your implement
+    if (element.addEventListener) {            //DOM2级方法
+        element.addEventListener(event, listener);
+    } else if (element.attachEvent) {          //针对IE8及以下浏览器
+        element.attachEvent("on" + event, listener);
+    }else{
+        element["on"+event] = listener;            //DOM0级方法
+    }
+}
+
+function dblclicklistener(event){
+    console.log("yes");
+    var image = this.src;
+    var imgWindow = window.open(image,"img","width=600,height=400,scrollbars=no");
+}
+
+// 移除element对象对于event事件发生时执行listener的响应
+function removeEvent(element, event, listener) {
+    // your implement
+    if (element.removeEventListenr) {              //DOM2级方法
+        element.removeEventListenr(event, listener);
+    } else if (element.detachEvent) {              //针对IE8及以下浏览器
+        element.detachEvent("on" + event, listener);
+    }else{
+        element["on"+event] = null;            //DOM0级方法
+    }
+}
+
+// 实现对click事件的绑定
+function addClickEvent(element, listener) {
+    // your implement
+    element.onclick = listener;
+}
+
+// 实现对于按Enter键时的事件绑定
+function addEnterEvent(element, listener) {
+    // your implement
+    addEvent(element, "keydown", function(event) {
+        if (event.keyCode == 13) {
+            listener();
+        }
+    });
 }
