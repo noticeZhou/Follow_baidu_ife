@@ -1,6 +1,6 @@
 window.onload=function(){
 	// 使用示例
-    $.delegate("#list", "li", "click", clickListener);
+    console.log(navigator.userAgent);
 }
 
 // 判断arr是否为一个数组，返回一个bool值
@@ -105,6 +105,7 @@ function isMobilePhone(phone) {
     return re.test(phone);
 }
 
+/***********************DOM*******************/
 // 为element增加一个样式名为newClassName的新样式
 function addClass(element, newClassName) {
     // your implement
@@ -158,7 +159,6 @@ function getPosition(element) {
         y: actualTop - elementScrollTop
     };
 
-
     /*return{
         //简单的做法
         x : element.getBoundingClientRect().left + Math.max(document.documentElement.scrollLeft, document.body.scrollLeft),
@@ -211,6 +211,7 @@ function $(selector) {
     } 
 }
 
+/*******************事件********************/
 // 给一个element绑定一个针对event事件的响应，响应函数为listener
 function addEvent(element, event, listener) {
     // your implement
@@ -265,12 +266,9 @@ function delegateEvent(element, tag, eventName, listener) {
         }
     });
 }
-function clickListener(event) {
-    console.log(this.id);
-}
 
 //封装函数
-$.on = function(selector, event, listener) {
+$.on = function(selector, event, listener) {    //addEvent
     // your implement
     addEvent($(selector), event, listener);
 }
@@ -280,11 +278,40 @@ $.click = function(selector, listener) {
     addClickEvent($(selector), listener);
 }
 
-$.un = function(selector, event, listener) {
+$.un = function(selector, event, listener) {   //removeEvent
     // your implement
     removeEvent($(selector), event, listener);
 }
 
-$.delegate = function(selector, tag, event, listener) {
+$.delegate = function(selector, tag, event, listener) {   //事件代理
     delegateEvent($(selector), tag, event, listener);
 };
+
+/**************BOM*******************/
+// 判断是否为IE浏览器，返回-1或者版本号
+function isIE() {
+    // your implement
+}
+
+// 设置cookie
+function setCookie(cookieName, cookieValue, expiredays) {
+    // your implement
+    document.cookie = "cookieName="+cookieName+";expiredays="+expiredays;
+    document.cookie = "cookieValue="+cookieValue+";expiredays="+expiredays;
+}
+
+// 获取cookie值
+function getCookie(cookieName) {
+    // your implement
+    var cooList = {};
+    if(document.cookie != ""){
+        var cookieList = document.cookie.split(";");
+        for(var i=0,len=cookieList.length;i<len;i++){
+            var key = cookieList[i].split("=")[0];
+            var value = cookieList[i].split("=")[1];
+            cooList[key]=value;
+        }
+        return cooList[cookieName];
+    }
+    return "";
+}

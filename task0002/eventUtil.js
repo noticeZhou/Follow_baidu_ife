@@ -22,18 +22,18 @@ var EventUtil={
 		return event ? event :window:window.event;
 	},
 
-	getTarget: function(event){
+	getTarget: function(event){           //事件真正的目标
 		return event.target || event.srcElement;
 	},
 
-	preventDefault: function(event){
+	preventDefault: function(event){       //取消事件的默认行为
         if(event.preventDefault){
         	event.preventDefault();
         }else{
         	event.returnValue = false;
         }
 	},
-	stopProagation: function(event){
+	stopProagation: function(event){       //取消事件进一步冒泡或者捕获
 		if(event.stopProagation){
 			event.stopProagation();
 		}else{
