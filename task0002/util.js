@@ -1,6 +1,6 @@
 window.onload=function(){
 	// 使用示例
-    addEvent($("img"), "dblclick", dblclicklistener);
+    $.delegate("#list", "li", "click", clickListener);
 }
 
 // 判断arr是否为一个数组，返回一个bool值
@@ -224,7 +224,6 @@ function addEvent(element, event, listener) {
 }
 
 function dblclicklistener(event){
-    console.log("yes");
     var image = this.src;
     var imgWindow = window.open(image,"img","width=600,height=400,scrollbars=no");
 }
@@ -256,3 +255,36 @@ function addEnterEvent(element, listener) {
         }
     });
 }
+//事件代理
+function delegateEvent(element, tag, eventName, listener) {
+    // your implement
+    addEvent(element,eventName,function(event){
+        var target = event.target || event.srcElement;
+        if(target.tagName.toLowerCase() == tag.toLowerCase()){
+            listener.apply(target,event);
+        }
+    });
+}
+function clickListener(event) {
+    console.log(this.id);
+}
+
+//封装函数
+$.on = function(selector, event, listener) {
+    // your implement
+    addEvent($(selector), event, listener);
+}
+
+$.click = function(selector, listener) {
+    // your implement
+    addClickEvent($(selector), listener);
+}
+
+$.un = function(selector, event, listener) {
+    // your implement
+    removeEvent($(selector), event, listener);
+}
+
+$.delegate = function(selector, tag, event, listener) {
+    delegateEvent($(selector), tag, event, listener);
+};
