@@ -1,6 +1,17 @@
 window.onload=function(){
 	// 使用示例
-    console.log(navigator.userAgent);
+    ajax(
+    'http://localhost:8080/server/ajaxtest', 
+    {
+        data: {
+            name: 'simon',
+            password: '123456'
+        },
+        onsuccess: function (responseText, xhr) {
+            console.log(responseText);
+        }
+    }
+);
 }
 
 // 判断arr是否为一个数组，返回一个bool值
@@ -314,4 +325,25 @@ function getCookie(cookieName) {
         return cooList[cookieName];
     }
     return "";
+}
+
+function ajax(url,options){
+    var xhr,method ;
+    if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+       xhr = new XMLHttpRequest();
+    }else{// code for IE6, IE5
+       xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    if(options.type){
+        method = options.type;
+    }else{
+        method = "GET";
+    }
+    xhr.open(method,options.url,true);
+    xhr.send(options.data);
+    if(xhr.readyState==4 && xhr.status==200){
+        options.onsuccess;
+    }else{
+        options.onfail;
+    }
 }
