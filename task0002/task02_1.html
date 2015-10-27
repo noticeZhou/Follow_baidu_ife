@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<!--指定字符的meta标签必须是head的第一个直接子元素-->
 		<meta charset="utf-8">
+		<!--启用IE Edge模式-->
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+		
 		<title>task0002_1</title>
 		<style>
-			.dataIn{
+			.dataIn {
 				width:1000px;
 				margin:20px auto;
 			}
-			#habitText{
-				width:400px;
-				height:400px;
+			#habitText {
+				width: 400px;
+				height: 400px;
 			}
 		</style>
 	</head>
 	<body>
-		<div class="dataIn">
+		<form class="dataIn">
             <textarea id="habitText"></textarea>
-		    <input type="button" value="submit" id="habitButton"/>
-		</div>
-		<script type="text/javascript" src="js/task02_1.js"></script>
+		    <input type="button" value="submit" id="habitButton">
+		</form>
+		<script src="js/task02_1.js"></script>
 	</body>
 </html>
