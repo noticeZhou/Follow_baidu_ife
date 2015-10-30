@@ -1,19 +1,3 @@
-window.onload=function(){
-	// 使用示例
-    ajax(
-    'http://localhost:8080/server/ajaxtest', 
-    {
-        data: {
-            name: 'simon',
-            password: '123456'
-        },
-        onsuccess: function (responseText, xhr) {
-            console.log(responseText);
-        }
-    }
-);
-}
-
 // 判断arr是否为一个数组，返回一个bool值
 function isArray(arr) {
     // your implement
@@ -84,8 +68,6 @@ function each(arr, fn) {
 function output(item) {
     console.log(item)
 }
-
-// 使用示例
 
 function output(item, index) {
     console.log(index + ': ' + item)
