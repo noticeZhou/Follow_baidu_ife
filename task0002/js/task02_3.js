@@ -1,34 +1,43 @@
-var i = 0;
-var count = 0;
-var bannerList = document.getElementsByClassName("banner")[0];
-var banner = bannerList.getElementsByTagName("img")[0];
 window.onload = function(){
-	rotate();
+    setInterval("update()",5000);
 }
-
-function rotate(){
-    banner.style.marginLeft = i+"px";
-    i += 20;
-    var t=setTimeout(rotate,20);
-    if(i==1000){
-        clearTimeout(t);
-        change();
-     }
-}
-
-function change(){
-    removeClass(bannerList,"active");
-    addClass(bannerList,"item");
-    if(count<5)
-        count++;
+var items = document.getElementsByClassName("item");
+var oneLoop;
+var i=0;
+function pre()    //往左
+{
+    if(i==-1000){
+        clearInterval(oneLoop);
+        var preItem = items[0].parentNode.removeChild(items[0]);  //which is displaying
+        items[0].parentNode.appendChild(preItem);     //push it at the last one        
+        i=0;
+    }
     else
-    	count=0;
-    bannerList = document.getElementsByClassName("banner")[count];
-    removeClass(bannerList,"item");
-    addClass(bannerList,"active");
-    i=0;
-    banner = bannerList.getElementsByTagName("img")[0];
-    rotate();
+        i -= 200;
+    items[0].parentNode.style.marginLeft = i+"px";
+}
+
+function next()  //往右
+{
+    if(i == 0){
+        i = -1000;
+        clearInterval(oneLoop);
+        var nextItem = items[5].parentNode.removeChild(items[5]);
+        items[0].parentNode.insertBefore(nextItem,items[0]);
+    }
+    else
+        i += 200;
+    items[0].parentNode.style.marginLeft = i+"px";
+}
+
+function custom()
+{
+
+}
+function update()
+{
+    
+    oneLoop = setInterval("next()",200);
 }
 
 // 为element增加一个样式名为newClassName的新样式
