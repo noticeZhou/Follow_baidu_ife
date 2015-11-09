@@ -161,8 +161,8 @@ function getPosition(element) {
 
 // 实现一个简单的Query
 function $(selector) {
-    var re_id = /^#(\w+)$/;
-    var re_class = /^\.(\w+)$/;
+    var re_id = /^#(\S+)$/;
+    var re_class = /^\.(\S+)$/;
     var re_diy = /^\[(data-\w+)\]$/;
     var re_diYoo = /^\[data-time=2015\]$/;
     var re_com = /^#(\w+)\s+\.(\w+)/;
