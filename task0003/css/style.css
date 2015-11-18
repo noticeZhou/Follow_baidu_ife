@@ -1,0 +1,143 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	width: 100%;
+	height: 60px;
+	background-color: #d8d2d1;
+	border-radius: 5px;
+	font-size: 21px;
+	line-height: 50px;
+	padding-left: 30px;
+	color: #aba2a0;
+}
+.type {
+	width: 200px;
+	background-color: #e6e6e6;
+	padding: 5px;
+	position: absolute;
+	top: 60px;
+	bottom: 0;
+	overflow: hidden;
+}
+.classify {
+	padding: 3px 10px; 
+}
+.main-classify {
+	font-size: 14px;
+	line-height: 20px;
+	cursor: pointer;
+}
+
+.main-classify img {
+	width: 30px;
+	height: 30px;
+}
+.sub-class {
+	display: none;
+	margin: 5px;
+	padding-left: 20px;
+	cursor: pointer;
+}
+.sub-class li {
+	height: 35px;
+	list-style-type: none;
+}
+.sub-class img {
+	width: 25px;
+	height: 25px;
+}
+/*.sub-class span {
+	font-size: 14px;
+	line-height: 25px;
+}*/
+.add-class {
+	position: absolute;
+	bottom: 5px;
+	left: 20px;
+	font-size: 17px;
+	cursor: pointer;
+}
+.add-class img{
+	width: 15px;
+	height: 15px;
+} 
+.task {
+	width:220px;
+	border: 1px solid #bdb7b6;
+	position: absolute;
+	top: 60px;
+	bottom: 0;
+	left: 210px;
+	overflow: hidden;
+}
+
+.mid-title {
+	height: 30px;
+	background-color: #ccc;
+	padding: 5px 5px;
+}
+
+.mid-title span {
+	font-size: 14px;
+	line-height: 30px;
+	margin:0 10px;
+}
+
+.task-by-date {
+	padding-left: 0;
+}
+
+.task-date {
+	background-color: #e0dec0;
+	margin-bottom: 5px;
+	padding-left: 20px;
+}
+
+.task-by-date li {
+	list-style-type: none;
+	height: 30px;
+	line-height: 25px;
+	cursor: pointer;
+}
+.detail {
+	position: absolute;
+	top: 60px;
+	bottom: 0;
+	left: 432px;
+	right:0;
+	overflow: hidden;
+}
+.task-nav {
+	height: 50px;
+	background-color: #c2c2be;
+}
+.edit-icon {
+	float: right;
+}
+.edit-icon img {
+	width: 24px;
+	height: 24px;
+	margin: 10px;
+}
+.edit-name {
+	font-size: 16px;
+	line-height: 50px;
+	padding-left: 20px;
+	font-weight: bold;
+}
+.edit-date {
+	background-color: #e0dec0;
+	height: 50px;
+	font-size: 14px;
+	line-height: 50px;
+	margin: 0;
+	padding-left: 20px;
+}
+.edit-content {
+	margin: 0;
+	padding: 10px;
+	font-size: 14px;
+}
