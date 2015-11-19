@@ -1,6 +1,7 @@
 body {
 	margin: 0;
 	padding: 0;
+	z-index: 1;
 }
 
 header {
@@ -49,18 +50,29 @@ header {
 	width: 25px;
 	height: 25px;
 }
-/*.sub-class span {
-	font-size: 14px;
-	line-height: 25px;
-}*/
-.add-class {
+.main-classify:hover,
+.sub-class li:hover {
+	background-color: #abafa3;
+}
+#add-task {
 	position: absolute;
 	bottom: 5px;
 	left: 20px;
 	font-size: 17px;
 	cursor: pointer;
 }
-.add-class img{
+#add-task img{
+	width: 15px;
+	height: 15px;
+} 
+#add-class {
+	position: absolute;
+	bottom: 5px;
+	left: 20px;
+	font-size: 17px;
+	cursor: pointer;
+}
+#add-class img{
 	width: 15px;
 	height: 15px;
 } 
@@ -84,6 +96,9 @@ header {
 	font-size: 14px;
 	line-height: 30px;
 	margin:0 10px;
+	padding: 2px 4px;
+	height: 30px;
+	cursor: pointer;
 }
 
 .task-by-date {
@@ -109,6 +124,7 @@ header {
 	left: 432px;
 	right:0;
 	overflow: hidden;
+	display: none;
 }
 .task-nav {
 	height: 50px;
@@ -121,6 +137,7 @@ header {
 	width: 24px;
 	height: 24px;
 	margin: 10px;
+	cursor: pointer;
 }
 .edit-name {
 	font-size: 16px;
@@ -140,4 +157,87 @@ header {
 	margin: 0;
 	padding: 10px;
 	font-size: 14px;
+}
+
+.editor {
+	width: 80%;
+	height: 200px;
+}
+
+#confirm-div {
+	width: 300px;
+	height: 150px;
+	padding: 20px;
+	border-radius: 5px;
+	background-color: #e6e6e6;
+	position: relative;
+	top: 100px;
+	left:100px;
+	display: none;
+}
+
+#confirm-div input {
+	width: 80px;
+	height: 40px;
+	margin-left: 30px;
+	border-radius: 10px;
+	background-color: #03a9f4;
+	position: relative;
+	top: 50px;
+	left: 70px;
+	cursor: pointer;
+}
+
+.finished-task {
+	color: green;
+	font-weight: bold;
+}
+
+#class-div {
+	width: 300px;
+	height: 200px;
+	border-radius: 5px;
+	outline: none;
+	background-color: #e6e6e6;
+	position: relative;
+	top: 100px;
+	margin: 0 auto;
+	display: none;
+	z-index: 10;
+	text-align: center;
+}
+
+#class-div div {
+	border-radius: 5px;
+	height: 30px;
+	background-color: #c2e879;
+	text-align: center;
+	line-height: 30px;
+}
+#class-div input,
+#class-div select {
+	width: 60%;
+	height: 25px;
+	padding: 0;
+}
+#class-div button {
+	width: 60px;
+	height: 25px;
+	margin-left: 15px;
+	border-radius: 5px;
+	background-color: #03a9f4;
+	position: relative;
+	top: 35px;
+	left: 60px;
+	cursor: pointer;
+}
+#overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: #000;
+	opacity: 0.7;
+	display: none;
 }

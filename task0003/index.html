@@ -17,7 +17,7 @@
     		<p style="cursor: pointer;">所有任务(11)</p>
     		<p>分类列表</p>
     		<div class="classify">
-    			<div class="main-classify"><img src="img/1187217.png">百度IFE项目(12)</div>
+    			<div class="main-classify" id="classify_id_3"><img src="img/1187217.png">百度IFE项目(12)</div>
     			<ul class="sub-class">
     				<li id="classify_id_1"><img src="img/1083918.png">task1(6)</li>
     				<li id="classify_id_2"><img src="img/1083918.png">task2(6)</li>
@@ -35,24 +35,19 @@
     		<div class="classify">
     			<div class="main-classify"><img src="img/1187217.png">默认分类(0)</div>
     		</div>
-    		<div class="add-class"><img src="img/1138892.png">&nbsp;&nbsp;新增分类</div>
+    		<div id="add-class"><img src="img/1138892.png">&nbsp;&nbsp;新增分类</div>
     	</div>
     	<div class="task">
     		<div class="mid-title">
-    			<span>所有</span>
-    			<span>未完成</span>
-    			<span>已完成</span>
+    			<span id="all-tasks">所有</span>
+    			<span id="unfinish-tasks">未完成</span>
+    			<span id="finished-tasks">已完成</span>
     		</div>
     		<ul id="task_list_1" style="padding: 0;margin:0;display:none;">
     			<ul class="task-by-date">
     				<li class="task-date">2015-04-20</li>
-    				<li style="	padding-left: 30px;">to-to 1</li>
-    				<li style="	padding-left: 30px;">to-do 2</li>
-    			</ul>
-    			<ul class="task-by-date">
-    				<li class="task-date">2015-04-20</li>
-    				<li style="	padding-left: 30px;">to-to 1</li>
-    				<li style="	padding-left: 30px;">to-do 2</li>
+    				<li class="task_1" style="padding-left:30px;">to-do 1</li>
+    				<li class="task_2" style="padding-left:30px;">to-do 2</li>
     			</ul>
     			<ul class="task-by-date">
     				<li class="task-date">2015-04-20</li>
@@ -65,16 +60,65 @@
     				<li style="	padding-left: 30px;">to-do 2</li>
     			</ul>
     		</ul>
-    		<div class="add-class"><img src="img/1138892.png">&nbsp;&nbsp;新增任务</div>
+            <ul id="task_list_3" style="padding: 0;margin:0;display:none;">
+                <ul class="task-by-date">
+                    <li class="task-date">2015-04-20</li>
+                    <li class="task_1" style=" padding-left: 30px;">to-to 1</li>
+                    <li style=" padding-left: 30px;">to-do 2</li>
+                </ul>
+                <ul class="task-by-date">
+                    <li class="task-date">2015-04-20</li>
+                    <li style=" padding-left: 30px;">to-to 1</li>
+                    <li style=" padding-left: 30px;">to-do 2</li>
+                </ul>
+                <ul class="task-by-date">
+                    <li class="task-date">2015-04-20</li>
+                    <li style=" padding-left: 30px;">to-to 1</li>
+                    <li style=" padding-left: 30px;">to-do 2</li>
+                </ul>
+                <ul class="task-by-date">
+                    <li class="task-date">2015-04-20</li>
+                    <li style=" padding-left: 30px;">to-to 1</li>
+                    <li style=" padding-left: 30px;">to-do 2</li>
+                </ul>
+            </ul>
+    		<div id="add-task"><img src="img/1138892.png">&nbsp;&nbsp;新增任务</div>
     	</div>
-    	<div class="detail">
+    	<div class="detail" id="detail_1">
     		<div class="task-nav">
     			<span class="edit-name">to-do 6</span>
-    			<span class="edit-icon"><img src="img/1075671.png"><img src="img/1168974.png"></span>
+    			<span class="edit-icon"><img class="confirm" src="img/1075671.png"><img class="edit" src="img/1168974.png"></span>
     		</div>
     		<p class="edit-date">任务时期：2015-04-20</p>
     		<p class="edit-content">完成task001的编码</p>
     	</div>
+        <div class="detail" id="detail_2">
+            <div class="task-nav">
+                <span class="edit-name">to-do 6</span>
+                <span class="edit-icon"><img class="confirm" src="img/1075671.png"><img class="edit" src="img/1168974.png"></span>
+            </div>
+            <p class="edit-date">任务时期：2015-04-20</p>
+            <p class="edit-content">完成task002的编码</p>
+        </div>
+        <div id="confirm-div">
+            <p>确定已经完成任务，可以愉快的玩耍了？</p>
+            <input id="cancel-btn" type="button" value="取消">
+            <input id="sure-btn" type="button" value="确定">
+        </div>
+        <div id="class-div">
+            <div>新增分类</div>
+            <p>新分类名称：<input type="text" id="class-name"></p>
+            <p>新分类父类：
+                <select id="class-parent">
+                    <option>无</option>
+                    <option>毕业设计</option>
+                    <option>百度IFE项目</option>
+                </select>
+            </p>
+            <button id="class-exit">取消</button>
+            <button id="class-save">确定</button>
+        </div>
+        <div id="overlay"></div>
     	<script src="js/eventUtil.js"></script>
         <script src="js/gtd.js"></script>
     </body>
