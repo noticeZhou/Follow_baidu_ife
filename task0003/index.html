@@ -14,13 +14,13 @@
     <body>
     	<header>GTD Tools</header>
     	<div class="type">
-    		<p style="cursor: pointer;">所有任务(11)</p>
+    		<p style="cursor: pointer;" id="all">所有任务(<span class="tasks-num">12</span>)</p>
     		<p>分类列表</p>
     		<div class="classify">
-    			<div class="main-classify" id="classify_id_3"><img src="img/1187217.png">百度IFE项目(12)</div>
+    			<div class="main-classify" id="classify_id_3"><img src="img/1187217.png">百度IFE项目(<span class="tasks-num">11</span>)</div>
     			<ul class="sub-class">
-    				<li id="classify_id_1"><img src="img/1083918.png">task1(6)</li>
-    				<li id="classify_id_2"><img src="img/1083918.png">task2(6)</li>
+    				<li id="classify_id_1"><img src="img/1083918.png">task1(<span class="tasks-num">5</span>)</li>
+    				<li id="classify_id_2"><img src="img/1083918.png">task2(<span class="tasks-num">6</span>)</li>
     			</ul>
     		</div>
     		<div class="classify">
@@ -50,16 +50,38 @@
     				<li class="task_2" style="padding-left:30px;">to-do 2</li>
     			</ul>
     			<ul class="task-by-date">
-    				<li class="task-date">2015-04-20</li>
+    				<li class="task-date">2015-04-21</li>
     				<li style="	padding-left: 30px;">to-to 1</li>
     				<li style="	padding-left: 30px;">to-do 2</li>
     			</ul>
     			<ul class="task-by-date">
-    				<li class="task-date">2015-04-20</li>
+    				<li class="task-date">2015-04-22</li>
     				<li style="	padding-left: 30px;">to-to 1</li>
     				<li style="	padding-left: 30px;">to-do 2</li>
     			</ul>
     		</ul>
+            <ul id="task_list_2" style="padding: 0;margin:0;display:none;">
+                <ul class="task-by-date">
+                    <li class="task-date">2015-04-20</li>
+                    <li class="task_1" style=" padding-left: 30px;">to-to 1</li>
+                    <li style=" padding-left: 30px;">to-do 2</li>
+                </ul>
+                <ul class="task-by-date">
+                    <li class="task-date">2015-04-21</li>
+                    <li style=" padding-left: 30px;">to-to 1</li>
+                    <li style=" padding-left: 30px;">to-do 2</li>
+                </ul>
+                <ul class="task-by-date">
+                    <li class="task-date">2015-04-22</li>
+                    <li style=" padding-left: 30px;">to-to 1</li>
+                    <li style=" padding-left: 30px;">to-do 2</li>
+                </ul>
+                <ul class="task-by-date">
+                    <li class="task-date">2015-04-23</li>
+                    <li style=" padding-left: 30px;">to-to 1</li>
+                    <li style=" padding-left: 30px;">to-do 2</li>
+                </ul>
+            </ul>
             <ul id="task_list_3" style="padding: 0;margin:0;display:none;">
                 <ul class="task-by-date">
                     <li class="task-date">2015-04-20</li>
@@ -67,17 +89,17 @@
                     <li style=" padding-left: 30px;">to-do 2</li>
                 </ul>
                 <ul class="task-by-date">
-                    <li class="task-date">2015-04-20</li>
+                    <li class="task-date">2015-04-21</li>
                     <li style=" padding-left: 30px;">to-to 1</li>
                     <li style=" padding-left: 30px;">to-do 2</li>
                 </ul>
                 <ul class="task-by-date">
-                    <li class="task-date">2015-04-20</li>
+                    <li class="task-date">2015-04-22</li>
                     <li style=" padding-left: 30px;">to-to 1</li>
                     <li style=" padding-left: 30px;">to-do 2</li>
                 </ul>
                 <ul class="task-by-date">
-                    <li class="task-date">2015-04-20</li>
+                    <li class="task-date">2015-04-23</li>
                     <li style=" padding-left: 30px;">to-to 1</li>
                     <li style=" padding-left: 30px;">to-do 2</li>
                 </ul>
@@ -118,6 +140,17 @@
             <button id="class-exit">取消</button>
             <button id="class-save">确定</button>
         </div>
+        <form id="task-div">
+            任务名称:<input type="text" class="task-text">
+            任务分类:<select class="task-text">
+                        <option>无</option>
+                        <option>毕业设计</option>
+                        <option>百度IFE项目</option>
+                    </select>
+            任务日期:<input type="text" class="task-text">
+            <textarea placeholder="在这里输入任务内容"></textarea>
+            <input type="submit" id="task-btn">
+        </form>
         <div id="overlay"></div>
     	<script src="js/eventUtil.js"></script>
         <script src="js/gtd.js"></script>
