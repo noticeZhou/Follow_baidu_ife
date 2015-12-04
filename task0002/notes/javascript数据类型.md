@@ -177,3 +177,17 @@
 
     元字符：  ( [ { \ ^ $ | ? * + . } ] )
     如果要匹配字符串中包含这些字符就必须对他们进行转义
+
+
+#####2.6函数的按值传参
+######JavaScript在向参数传值时是按值传递的，可以把函数的参数看成是函数的局部变量，如果是基本类型值就是直接复制，如果是引用类型值则是像引用类型的复制那样复制。
+	function setName(obj) {
+		obj.name = "rose";
+		obj = new Object();
+		obj.name = "andy";
+	}
+
+	var person = new Object();
+	setName(person);
+	console.log(person.name);  //rose
+######从上面的这个例子中可以看得出来，如果是按引用传递，那么最后肯定会指向"andy"。而在这里最后person.name的值为rose，说明是把person这个对象copy给了函数的局部变量obj。在将name属性赋值为rose之后，person.name也就是rose。而后面两条语句只不过是在函数内部新建一个局部对象，在函数执行完毕之后就立即被销毁
