@@ -78,3 +78,68 @@
 	var funcs = constfuncs();
 	funcs[5]();       //10
 ######结果不是想象中的5.因为循环结束，i的值为10.函数返回的闭包只不过是指向了该函数的作用域链，而不是像上一个例子那样将每一个成员变量复制一遍
+####关于this对象
+#####一、单纯函数调用的情况
+    var name = "this window";
+
+    var object = {
+        name: "my object",
+        getName: function() {
+            return function() {
+                return this.name;
+            };
+        }
+    }
+
+    console.log(object.getName()());  //this window
+######上面这个例子的结果之所以是全局对象中的name是因为是在全局环境中调用的内部函数。每个函数在被调用时，其活动对象会自动取得this,arguments的值。呢你不函数在搜索这两个变量时，只会搜索到其活动对象为止，永远不可能访问到外部函数的这两个变量。
+######上面这个例子如果想要引用外部函数的name变量的值，可以这样稍稍改一下
+    var name = "this window";
+
+    var object = {
+        name: "my object",
+        getName: function() {
+			var that = this;
+            return function() {
+                return that.name;
+            };
+        }
+    }
+
+    console.log(object.getName()());  //my object
+######对程序进行了一点小修改，添加了一个that变量，指向this，然后在内部函数中使用that变量。这样，在外面调用内部函数时，就会在外部函数的执行环境中搜索that变量的值，而这里的this引用的当前的object。所以结果是我们想要的 my object
+#####二、this还可以作为对象方法被调用
+	var x = 0;
+
+	function test() {
+		console.log(this.x);
+	}
+
+	var obj = new Object();
+	obj.test = test;
+	obj.x = 1;
+
+	obj.test();  //1
+######这里this动态绑定了当前的对象obj，因此引用的是当前对象的变量值
+#####三、作为构造函数被调用，此时this指向的就是新建的对象
+	var x = 2;
+
+	function test(){
+	　　this.x = 1;
+	}
+
+	var o = new test();
+	console.log(o.x); // 1
+#####四，使用apply(),call()。this指向的就是括号里的第一个参数，表示函数当前作用的对象，若为空则表示为全局对象
+	var x = 0;
+	
+	function test(){
+		console.log(this.x);	
+	}
+
+	var o={};
+	o.x = 1;
+	o.m = test;
+	o.m.apply();     //0
+	o.m.apply(0);   //1
+	
