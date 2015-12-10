@@ -321,11 +321,31 @@ function ajax(url,options){
     }else{
         method = "GET";
     }
-    xhr.open(method,options.url,true);
+    xhr.open(method,url,true);
     xhr.send(options.data);
-    if(xhr.readyState==4 && xhr.status==200){
-        options.onsuccess;
-    }else{
-        options.onfail;
+    xhr.onreadystatechange = function() {
+        if(xhr.readyState==4 && xhr.status==200){
+            options.onsuccess(xhr);
+        }else{
+            options.onfail;
+        }
     }
+}
+
+window.onload = function() {
+    ajax(
+        'http://noticezhou.github.io/', 
+        {
+            data: {
+                name: 'simon',
+                password: '123456'
+            },
+            onsuccess: function (xhr) {
+                console.log(xhr.responseText);
+            },
+            onfail: function() {
+                console.log("sorry!");
+            }
+        }
+    );
 }
