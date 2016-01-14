@@ -7,19 +7,43 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
 	<title>task02_5</title>
 	<style>
-		div {
-			width: 200px;
+		.move {
+			width: 250px;
 			height: 50px;
-			margin: 50px auto;
+			border-top: 1px solid #000;
+			border-bottom: 1px solid #000;
 			background-color: red;
 			cursor: move;
-			position:absolute;
+			display: inline-block;
+			font-size: 20px;
+			font-weight: bold;
+			text-align: center;
+			color: #fff;
+		}
+		.target {
+			width: 250px;
+			height: 500px;
+			border: 1px solid;
+			background-color: #fff;
+			display: inline-block;
+			margin: 10px 20px;
+			vertical-align:top
 		}
 	</style>
 </head>
     <body>
-        <div></div>
-        <script src="js/util.js"></script>
+        
+        <div class="target">
+        	<div draggable="true" class="move" id="div1">1</div>
+        	<div draggable="true" class="move" id="div2">2</div>
+        	<div draggable="true" class="move" id="div3">3</div>
+        	<div draggable="true" class="move" id="div4">4</div>
+        	<div draggable="true" class="move" id="div5">5</div>
+        	<div draggable="true" class="move" id="div6">6</div>
+        	<div draggable="true" class="move" id="div7">7</div>
+        </div>
+        <div class="target"></div>
+        <script src="js/eventUtil.js"></script>
         <script src="js/task02_5.js"></script>
     </body>
 </html>
