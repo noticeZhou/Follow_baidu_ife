@@ -1,0 +1,158 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	background-color:#e6e6e6;
+}
+/*这里是头部样式开始的地方*/
+header{
+	width:100%;
+	height:80px;
+	background-color:purple;
+	position:relative;
+}
+header> nav{
+	margin:0 auto;
+	width:980px;
+}
+header h1{
+	float:left;
+	color:white;
+	line-height:80px;
+}
+header ul{
+	float:right;
+	margin-top:40px;
+}
+header ul li{
+	list-style-type:none;
+	font-family:SimSun;
+	font-size:14px;
+	margin:auto 14px;
+	display:inline;
+	color:#fff;
+}
+header img{
+	position:absolute;
+	right:10px;
+	bottom:0;
+}
+@media(max-width: 980px){
+		#icon_github{
+			display:none;
+		}
+	}
+/*这里是头部样式结束的地方*/
+/*这里是底部样式开始的地方*/
+footer{
+	height:400px;
+	width:100%;
+	background-color:#000000;
+	overflow:hidden;
+}
+footer .navbar{
+	text-align:center;
+	border-bottom:1px solid #efefef;
+}
+.navbar li{
+	color:#ffffff;
+	list-style-type:none;
+	display:inline;
+	padding:5px 0;
+	margin:0 10px;
+}
+.navbar a{
+	color:#ffffff;
+	text-decoration: none
+}
+.nav_cross{
+	width:980px;
+	margin:0 auto;
+	margin-top:40px;
+}
+.cross_ceil{
+	width:190px;
+	padding-left:0px;
+	display:inline-block;
+	text-align:center;
+}
+.nav_cross li{
+	font-size:14px;
+	list-style-type:none;
+	margin:10px 0;
+}
+.nav_cross a{
+	color:#ffffff;
+}
+.nav_cross a:link{
+	text-decoration: none;
+}
+.nav_cross a:hover{
+	text-decoration: underline;
+}
+.nav_title{
+	font-size:16px;
+	color:#ffffff;
+}
+/*这里是底部样式结束的地方*/
+/*整个页面的灰色背景*/
+.web_bg{
+	width:100%;
+	height:1000px;
+	background-color:#e6e6e6;
+	overflow:hidden;
+}
+/*整个页面的灰色背景end*/
+/*固定980px宽度的内容区*/
+.content{
+	width:980px;
+	height:1000px;
+	margin:10px auto;
+	position:relative;
+	z-index:10;
+}
+/*固定980px宽度的内容区end*/
+
+/*搜索框样式部分*/
+.search{
+	height:40px;
+	width:190px;
+	border:1px solid #e6e6e6;
+	margin:20px 30px;
+	position:relative;
+}
+.search_text{
+	width:110px;
+	height:40px;
+	padding:0;
+	border:0;
+	position:absolute;
+	right:40px;/*右边button的宽度是40px，故绝对定位于它左边40px处，这样两者才贴合*/
+}
+.search_button{
+	height:40px;
+	width:40px;
+	padding:0;
+	border:0;
+	position:absolute;
+	right:0;
+	background-color:#e6e6e6;
+}
+.search_button:hover{
+	background-color:#9999CC;
+}
+/*搜索框样式end*/
+/*侧边栏样式*/
+.aside{
+	float:right;
+	width:250px;
+	overflow:hidden;
+}
+.asidement{
+	width:100%;
+	background-color:#ffffff;
+	margin:20px 0;
+	overflow:hidden;
+}
+/*侧边栏样式end*/
