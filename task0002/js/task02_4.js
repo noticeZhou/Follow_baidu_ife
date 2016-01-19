@@ -2,6 +2,7 @@ var suggestion = ['a', 'abandon', 'abdomen', 'abide', 'ability', 'able', 'abnorm
 var searchBox = document.getElementsByTagName("input")[0];
 var activeItem = document.getElementsByClassName("active")[0];
 window.onload = function(){
+    searchBox.value = "";   //页面记载之后就把输入框清空
 	addInputListener(searchBox);
     addEvent(searchBox, "keydown", function(event) {
         keyEvent(event.keyCode);
@@ -68,10 +69,11 @@ function keyEvent(key){
 
 function mouseEvent(){
     if($(".tipBox")){
+        console.log($(".tipBox"));
         delegateEvent($(".tipBox"),"li","mouseover",function(){
             if($(".active"))
                 removeClass($(".active"),"active");
-            addClass(this,"active");
+                addClass(this,"active");
         });
         delegateEvent($(".tipBox"),"li","click",function(){
             searchBox.value = getString(this.innerHTML);
@@ -81,7 +83,10 @@ function mouseEvent(){
 }
 
 function getString(content){
-    var re = /^<span>(\w+)<\/span>(\w+)$/;
-    re.exec(content);
-    return RegExp.$1+RegExp.$2;
+    console.log(content);
+    var re = /^<span>(\w+)<\/span>(\w*)$/;
+    if(re.test(content)) {
+        return RegExp.$1+RegExp.$2;
+    }
+    
 }

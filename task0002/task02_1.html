@@ -8,24 +8,52 @@
 		
 		<title>task0002_1</title>
 		<style>
+		     * {
+		     	margin: 0;
+		     	padding: 0;
+		     }
+		     h3 {
+		     	width: 300px;
+		     	margin: 20px auto;
+		     }
 			.dataIn {
-				width:1000px;
-				margin:20px auto;
+				width: 800px;
+				margin: 50px auto;
+			}
+			.dataIn .display {
+				display:  inline-block;
+				vertical-align: top;
+				width: 350px;
+				margin-left: 40px;
 			}
 			#habitText {
 				width: 400px;
-				height: 400px;
+				height: 250px;
+				display: inline-block;
+				vertical-align: top;
+			}
+			#habitButton {
+				margin-left: 50px;
+				width: 100px;
+				height: 30px;
+				border: 1px solid #fff;
+				border-radius: 10px;
+				outline: none;
+				cursor: pointer;
 			}
 			.info {
 				width: 800px;
-				margin: 20px auto;
+				margin: 60px auto;
 			}
 		</style>
 	</head>
-	<body>
+	<body background="img/body-bg.png">
+		<h3>task0002 简单输入处理</h3>
 		<form class="dataIn">
-            <textarea id="habitText" placeholder="输入您的爱好，用逗号来分隔（不超过10个）"></textarea>
-		    <input type="button" value="submit" id="habitButton" >
+            <textarea id="habitText" placeholder="输入您的爱好，用逗号等分隔符来分隔（不超过10个）"></textarea>
+            <div class="display">
+		        <input type="button" value="submit" id="habitButton">
+		    </div>
 		</form>
 		<div class="info">
 			<h3>任务要求</h3>
