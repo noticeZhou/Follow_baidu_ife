@@ -72,8 +72,9 @@ footer .navbar{
 	margin-top:40px;
 }
 .cross_ceil{
-	width:190px;
-	padding-left:0px;
+	box-sizing: border-box;
+	width: 19%;
+	padding-left: 0px;
 	display:inline-block;
 	text-align:center;
 }
