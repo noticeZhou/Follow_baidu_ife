@@ -13,7 +13,8 @@
 	    }
 	    .input input {
 	    	box-sizing : border-box;
-	    	width:200px;
+	    	width: 300px;
+	    	height: 30px;
 	    	border: 2px solid #e6e6e6;
 	    }
 	    .tipBox {
@@ -30,13 +31,26 @@
 	    	cursor: pointer;
 	    	background-color:#e6e6e6;
 	    }
-
+	    .tip {
+	    	width: 500px;
+	    	margin: 20px auto;
+	    }
+	    h3 {
+	    	width: 200px;
+	    	margin: 20px auto;
+	    }
 	</style>
 </head>
 <body>
+	<h3>task2 输入提示框</h3>
 	<div class="input">
-		<input type="text">
+		<input type="text" placeholder="请输入任何你想输入的，比如ab,ba等">
 	</div>
+	<ul class="tip">
+		<li>允许使用鼠标点击选中提示栏中的某个选项</li>
+		<li>允许使用键盘上下键来选中提示栏中的某个选项，回车确认选中</li>
+		<li>选中后，提示内容变更到输入框中</li>
+	</ul>
 	<script src="js/util.js"></script>
 	<script src="js/task02_4.js"></script>
 </body>
