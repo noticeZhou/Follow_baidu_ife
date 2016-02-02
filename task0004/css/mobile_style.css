@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family:Tahoma,Arial,Roboto,”Droid Sans”,”Helvetica Neue”,”Droid Sans Fallback”,”Heiti SC”,sans-self;
+}
+/*页面头部start*/
+.header {
+  display: -webkit-flex;      /*把它作为一个容器，中间的文本作为项目，才会有效对齐*/
+  flex: 0 0 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: #58a6f6;
+  height: 36px;
+  font-size: 22px;
+}
+/*end*/
+
+/*分类页面start*/
+#classDiv {
+  display: none;
+  flex-wrap: wrap;
+}
+#classDiv #dis-cate {
+  flex: 0 0 100%;
+}
+#classDiv #all,
+#dis-cate p{
+  display: -webkit-flex;
+  flex: 0 0 100%;
+  height: 40px;
+  justify-content: left;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 40px;
+  background: #e6e6e6 url(../img/folder.png) left center no-repeat;
+  border-bottom: 1px solid #58a6f6;
+  font-size: 18px;
+}
+#classDiv .header {
+  background: #58a6f6 url(../img/add.png) 95% center no-repeat;
+}
+/*分类页面end*/
+
+/*任务页面start*/
+#taskDiv {
+  display: none;
+  flex-wrap: wrap;
+}
+#taskDiv #nav {
+  display: -webkit-flex;
+  flex: 0 0 100%;
+  height: 36px;
+  background-color: #3af0b6;
+}
+#nav span {
+  display: -webkit-flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+#nav #yes-tasks {
+  border-left: 1px solid #58a6f6;
+  border-right: 1px solid #58a6f6;
+}
+#taskDiv #date-tasks {
+  display: -webkit-flex;
+  flex: 0 0 100%;
+  flex-wrap: wrap;
+}
+#date-tasks li {
+  display: -webkit-flex;
+  flex: 0 0 100%;
+  height: 40px;
+  justify-content: left;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 40px;
+  background: #e6e6e6 url(../img/folder.png) left center no-repeat;
+  border-bottom: 1px solid #58a6f6;
+  font-size: 18px;
+}
+#taskDiv .header {
+  background: #58a6f6 url(../img/add.png) 95% center no-repeat;
+}
+/*end*/
+
+/*任务详细页面start*/
+#detailDiv {
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+#detailDiv #detail-title {
+  display: -webkit-flex;
+  flex: 0 0 100%;
+}
+#detailDiv #detail-name,
+#detailDiv #detail-date {
+  display: -webkit-flex;
+  flex: 0 0 100%;
+  justify-content: left;
+  align-items: center;
+  height: 40px;
+  box-sizing: border-box;
+  padding-left: 20px;
+  border-bottom: 1px solid;
+}
+#detailDiv #detail-content {
+  display: -webkit-flex;
+  flex: 0 0 100%;
+  height: 200px;
+  box-sizing: border-box;
+  padding-left: 20px;
+}
+/*end*/
+
+/*任务编辑页面start*/
+#editDiv {
+  display: none;
+}
+/*end*/
+
+/*新增分类页面start*/
+#cateDiv {
+  display: none;
+}
+
+
+/*掩盖整个页面的div*/
+#overlay {
+  display: none;
+}
+/*end*/

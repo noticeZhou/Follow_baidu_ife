@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--指定字符的meta标签必须是head的第一个直接子元素-->
+	<meta charset="utf-8">
+	<!--启用IE Edge模式-->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>GTD tools</title>
+	<link rel="stylesheet" href="css/mobile_style.css">
+</head>
+    <body>
+			<!--分类页面start-->
+    	<div id="classDiv">
+				  <h2 class="header">任务分类</h2>
+          <h5 id="all">所有任务(<span></span>)</h5>
+          <div id="dis-cate">
+						<p>class1</p>
+						<p>class2</p>
+						<p>class3</p>
+					</div>
+        </div>
+				<!--分类页面end-->
+				<!--任务页面start-->
+        <div id="taskDiv">
+					  <h2 class="header">任务列表</h2>
+            <div id="nav">
+                <span id="all-tasks" class="active">所有</span>
+                <span id="yes-tasks">已完成</span>
+                <span id="no-tasks">未完成</span>
+            </div>
+            <ul id="date-tasks">
+							<li>task1</li>
+							<li>task2</li>
+							<li>task3</li>
+						</ul>
+        </div>
+				<!--任务页面end-->
+				<!--任务详细页面start-->
+        <div id="detailDiv">
+            <div id="detail-title">
+                <h3 class="header">任务内容</h3>
+            </div>
+            <p id="detail-name">task2015</p>
+            <p id="detail-date">2015-12-12</p>
+            <p id="detail-content">content</p>
+        </div>
+				<!--任务详细页面end-->
+				<!--任务编辑页面start-->
+        <form id="editDiv">
+            <p id="edit-title"></p>
+            <p id="edit-date"></p>
+            <p id="edit-cate">
+                任务分类：
+                <select></select>
+            </p>
+            <textarea id="edit-content" placeholder="在这里输入内容"></textarea>
+            <input id="cancel-btn" type="button" value="放弃">
+            <input id="ok-btn" type="button" value="提交">
+        </form>
+				<!--任务编辑页面end-->
+				<!--新增分类页面start-->
+        <div id="cateDiv">
+            <div class="nav-div">新增分类</div>
+            <p>新分类名称：<input type="text" id="class-name"></p>
+            <p>新分类父类：
+                <select id="cate-parent">
+                    <option>无</option>
+                </select>
+            </p>
+            <button id="cate-eit">取消</button>
+            <button id="cate-save">确定</button>
+        </div>
+				<!--新增分类页面end-->
+        <div id="overlay"></div>
+				<script src="js/fastclick.min.js"></script>
+				<script src="js/gtd.js"></script>
+    </body>
+</html>
