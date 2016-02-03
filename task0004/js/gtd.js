@@ -2,24 +2,26 @@ window.onload = function() {
   var classDiv = document.getElementById("classDiv");
   var taskDiv = document.getElementById("taskDiv");
   var detailDiv = document.getElementById("detailDiv");
-
+  swipe(classDiv);
+  swipe(taskDiv)
   swipe(detailDiv);
-  if(swipe(classDiv) === "right") {
+}
+
+function opration(element,direction) {
+  if(element.id === "classDiv" && direction === "left") {
     classDiv.style.display = "none";
     taskDiv.style.display = "-webkit-flex";
-  } else if(swipe(taskDiv) === "left") {
+  } else if(element.id === "taskDiv" && direction === "right") {
     taskDiv.style.display = "none";
     classDiv.style.display = "-webkit-flex";
-  } else if (swipe(taskDiv) === "right") {
+  } else if (element.id === "taskDiv" && direction === "left") {
     taskDiv.style.display = "none";
     detailDiv.style.display = "-webkit-flex";
-  } else if(swipe(detailDiv) === "right") {
+  } else if(element.id === "detailDiv" && direction === "right") {
     detailDiv.style.display = "none";
     taskDiv.style.display = "-webkit-flex";
   }
-
 }
-
 function swipe(element) {
     //获取touch的点(兼容mouse事件)
     var getTouchPos = function(e){
@@ -73,10 +75,8 @@ function swipe(element) {
     var time_end = Date.now();
     //距离和时间都符合
     if(getDist(point_start,point_end) > SWIPE_DISTANCE && time_start- time_end < SWIPE_TIME){
-        console.log(getSwipeDirection(point_end,point_start));
-        return getSwipeDirection(point_end,point_start);
-        //touchPad.innerHTML = 'swipe'+dir;
-        //getSwipeDirection(point_end,point_start);
+        var direction = getSwipeDirection(point_end,point_start);
+        opration(element,direction);
     }
   }
 

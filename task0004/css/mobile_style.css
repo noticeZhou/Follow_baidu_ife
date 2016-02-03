@@ -17,7 +17,7 @@
 
 /*分类页面start*/
 #classDiv {
-  display: none;
+  display: -webkit-flex;
   flex-wrap: wrap;
 }
 #classDiv #dis-cate {
@@ -86,7 +86,7 @@
 
 /*任务详细页面start*/
 #detailDiv {
-  display: -webkit-flex;
+  display: none;
   flex-wrap: wrap;
 }
 #detailDiv #detail-title {
