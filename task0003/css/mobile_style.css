@@ -1,0 +1,23 @@
+/*页面头部start*/
+header {
+  display: flex;
+}
+/*end*/
+
+/*分类页面start*/
+#classDiv {
+  display: flex;
+}
+/*end*/
+
+/*任务页面start*/
+#taskDiv {
+  display: none;
+}
+/*end*/
+
+/*任务详细页面start*/
+#detailDiv {
+  display: none;
+}
+/*end*/

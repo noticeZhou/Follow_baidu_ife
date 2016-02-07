@@ -81,8 +81,8 @@ window.onload = function() {
     //localStorage.clear();          //remember to delete this line
 	if(!localStorage.cate) {
 		localStorage.cate = cateText;
-        localStorage.task = taskText;
-	} 
+    localStorage.task = taskText;
+	}
 	cate = JSON.parse(localStorage.cate);
 	task = JSON.parse(localStorage.task);
 
@@ -134,8 +134,8 @@ function displayCate() {
                 catep.appendChild(del_img);
                 EventUtil.addHandler(catep,"mouseover",del_cate);
             }
-            EventUtil.addHandler(catep,"click",child_cate);   
-            EventUtil.addHandler(catep,"click",displayTask);   
+            EventUtil.addHandler(catep,"click",child_cate);
+            EventUtil.addHandler(catep,"click",displayTask);
             cate_div.appendChild(catep);
             dis_cate.appendChild(cate_div);
         }
@@ -153,7 +153,7 @@ function child_cate() {
         var choo = document.getElementById(cho_cate);
         choo.className = "";
     }
-    this.className = "active"; 
+    this.className = "active";
     var cate_div = this.parentNode.getElementsByTagName("ul");
     if(cate_div.length === 0) {
         var cateul = document.createElement("ul");
@@ -211,10 +211,11 @@ function conf_del() {
     for(var i=1,len=cate.length;i<len;i++) {  //cate.length在不断变化，所以一开始赋初值以不受影响
         if(cate[i].id == cate_id) {
             cate.splice(i,1);     //在cate数组中删除当前分类
+            console.log(cate);
             break;
         }
     }
-    for(var len1=task.length,j=len1-1;j>=0;j--) { 
+    for(var len1=task.length,j=len1-1;j>=0;j--) {
         if(task[j].cate == cate_id) {
             task.splice(j,1);              //如果有直接属于该类的task，则删除他们
             for(var len2=cate.length,m=len2-1;m>=0;m--) {
@@ -233,7 +234,9 @@ function conf_del() {
             }
         }
     }
-    displayCate();    
+    console.log(task);
+    save();
+    displayCate();
 }
 function add_cate() {
     var cate_div = document.getElementById("cate-div");
@@ -285,15 +288,15 @@ function add_cate() {
                     overlay.style.display = "none";
                     displayCate();
                 }
-            } 
-        }   
+            }
+        }
     });
     EventUtil.addHandler(cate_exit,"click",function() {
         cate_div.style.display = "none";
         overlay.style.display = "none";
     })
 }
-//以日期date数组作为参数，展示相应的任务列表 
+//以日期date数组作为参数，展示相应的任务列表
 function display_byDate(date) {
     var date_div = document.getElementById("task-by-date");
     if(date_div.innerHTML !== "") {
@@ -331,7 +334,7 @@ function displayTask() {
         var choo = document.getElementById(cho_cate);
         choo.className = "";
     }
-    this.className = "active"; 
+    this.className = "active";
     var date =[];
     var date_task =[];
     for(var i=0;i<task.length;i++) {
@@ -363,7 +366,7 @@ function display_detail(title,date,content,id){
     detail_title.id = id;
     detail_date.innerHTML = date;
     detail_content.innerHTML = content;
-    
+
     var edit_btn = document.getElementById("task-edit");
     var get_btn = document.getElementById("task-get");
     EventUtil.addHandler(edit_btn,"click",task_edit);
@@ -450,10 +453,10 @@ function add_task() {
     cate_edit.style.display = "block";
     var cate_select = cate_edit.getElementsByTagName("select")[0];
     for(var i=0;i<cate.length;i++) {
-        if(cate[i].child === [] || cate[i].father !== -1){
+        if(cate[i].child.length === 0 || cate[i].father !== -1){
             var new_op = document.createElement("option");
             new_op.innerHTML = cate[i].name;
-            cate_select.appendChild(new_op);      
+            cate_select.appendChild(new_op);
         }
     }
     title_edit.innerHTML = "任务名称：<input type='text' placeholder='请输入不超过15个字'>";
@@ -561,7 +564,7 @@ function dis_choose(status,child) {
     var task_list = document.getElementById("task-by-date");
     task_list.innerHTML = "";
     for(var i=0,len=task.length;i<len;i++) {
-        if((task[i].finish === status || status === "all") && (task[i].cate == choosed_cate || 
+        if((task[i].finish === status || status === "all") && (task[i].cate == choosed_cate ||
             choosed_cate === -1 || child.indexOf(task[i].cate) != -1)) {
             if(date.indexOf(task[i].date) === -1) {
                 date.push(task[i].date);
@@ -575,7 +578,7 @@ function dis_choose(status,child) {
                 new_li.innerHTML = task[i].name;
                 if(task[i].finish === true) {
                     new_li.className = "finish";
-                } 
+                }
                 task_list.appendChild(new_li);
             }else {
                 var current_date = task_list.getElementsByTagName("li");

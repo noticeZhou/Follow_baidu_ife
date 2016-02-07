@@ -4,12 +4,14 @@
 	<!--指定字符的meta标签必须是head的第一个直接子元素-->
 	<meta charset="utf-8">
 	<!--启用IE Edge模式-->
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 	<title>GTD tools</title>
 	<link rel="stylesheet" href="css/style.css">
 </head>
     <body>
     	<header>GTD Tools</header>
+			<!--任务分类显示start-->
     	<div id="classDiv">
             <h5 id="all">所有任务(<span></span>)</h5>
             <h5>分类列表</h5>
@@ -24,15 +26,20 @@
             </div>
             <div id="add-class">添加分类</div>
         </div>
+				<!--任务分类显示end-->
+				<!--任务列表显示start-->
         <div id="taskDiv">
             <div id="nav">
                 <span id="all-tasks" class="active">所有</span>
                 <span id="yes-tasks">已完成</span>
                 <span id="no-tasks">未完成</span>
             </div>
+						<!--按时期展示任务-->
             <ul id="task-by-date"></ul>
             <div id="add-div">添加任务</div>
         </div>
+				<!--任务列表显示end-->
+			  <!--任务详细显示start-->
         <div id="detailDiv">
             <div id="detail-title">
                 <h3></h3>
@@ -50,6 +57,8 @@
                 </div>
             </div>
         </div>
+			  <!--任务详细显示end-->
+				<!--任务编辑区域start-->
         <form id="editDiv">
             <p id="edit-title"></p>
             <p id="edit-date"></p>
@@ -61,6 +70,8 @@
             <input id="cancel-btn" type="button" value="放弃">
             <input id="ok-btn" type="button" value="提交">
         </form>
+				<!--任务编辑区域end-->
+				<!--新增分类区域start-->
         <div id="cate-div">
             <div class="nav-div">新增分类</div>
             <p>新分类名称：<input type="text" id="class-name"></p>
@@ -72,6 +83,7 @@
             <button id="cate-eit">取消</button>
             <button id="cate-save">确定</button>
         </div>
+				<!--新增分类区域end-->
         <div id="overlay"></div>
     	<script src="js/eventUtil.js"></script>
         <script src="js/gtd.js"></script>

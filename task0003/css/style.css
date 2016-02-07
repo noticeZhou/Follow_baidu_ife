@@ -15,7 +15,7 @@ header {
 	padding-left: 30px;
 	color: #aba2a0;
 }
-
+/*分类区域start*/
 #classDiv {
 	width: 200px;
 	position: absolute;
@@ -47,11 +47,13 @@ header {
 #classDiv .active {
 	background-color: #fff;
 }
+/*分类名称start*/
 #dis-cate img {
 	position: absolute;
 	right: 0;
 	display: none;
 }
+/*分类名称end*/
 #add-class,#add-div {
 	width: 100%;
 	height: 32px;
@@ -62,7 +64,30 @@ header {
 	background: url(../img/add.png) no-repeat 10px;
 	cursor: pointer;
 }
-
+/*删除分类*/
+#det-div {
+	background-color: yellow;
+	width: 300px;
+	height: 200px;
+	border-radius: 5px;
+	display: none;
+	z-index: 10;
+	margin-left: 450px;
+}
+#det-div .nav-div {
+	height: 30px;
+	line-height: 30px;
+	font-size: 18px;
+	font-weight: bold;
+	background-color: #bde936;
+	text-align: center;
+}
+#det-div p {
+	width: 240px;
+	overflow: hidden;
+}
+/*分类区域end*/
+/*任务列表展示start*/
 #taskDiv {
 	width: 230px;
 	position: absolute;
@@ -112,7 +137,8 @@ header {
     font-weight: bold;
     background: #d6f183 url(../img/get.png) no-repeat right;
 }
-
+/*任务列表展示end*/
+/*任务详细start*/
 #detailDiv {
 	margin-left: 432px;
 	display: none;
@@ -147,29 +173,20 @@ header {
 	height: 200px;
 	border: 1px solid #e6e6e6;
 	border-radius: 5px;
-	margin-left: 100px;	
+	margin-left: 100px;
 	display: none;
 	z-index: 10;
-}
-#det-div {
-	background-color: yellow;
-	width: 300px;
-	height: 200px;
-	border: 10px solid red;
-	border-radius: 5px;
-	display: none;
-	z-index: 10;
-	margin-left: 450px;
 }
 #ok-div .nav-div {
 	height: 30px;
-	background-color: #bde936; 
+	line-height: 30px;
+	font-size: 18px;
+	font-weight: bold;
+	background-color: #bde936;
 	text-align: center;
 }
-#det-div p {
-	width: 240px;
-	overflow: hidden;
-}
+/*任务详细end*/
+/*弹出框start*/
 .inter-div p {
 	margin: 10px;
 	text-align: center;
@@ -182,9 +199,11 @@ header {
 	margin: 80px 10px 0;
 	cursor: pointer;
 	outline: none;
+	border: 1px solid;
 	border-radius: 10px;
 }
-
+/*弹出框end*/
+/*任务编辑start*/
 #editDiv {
 	margin-left: 432px;
 	display: none;
@@ -215,23 +234,27 @@ header {
 	margin: 20px 20px;
 	cursor: pointer;
 	outline: none;
+	border: 1px solid #fff;
 	border-radius: 10px;
+	outline: none;
 }
 #edit-content {
 	width: 100%;
 	height: 250px;
 	padding: 10px;
 }
-
+/*任务编辑end*/
+/*新增分类start*/
 #cate-div {
 	width: 300px;
 	height: 200px;
 	border-radius: 5px;
 	outline: none;
 	background-color: #e6e6e6;
-	position: relative;
-	top: 100px;
-	margin: 0 auto;
+	position: absolute;
+	top: 200px;
+	left: 50%;
+	margin-left: -150px;
 	display: none;
 	z-index: 10;
 	text-align: center;
@@ -249,7 +272,9 @@ header {
 	width: 60px;
 	height: 25px;
 	margin-left: 15px;
+	border: 1px solid #fff;
 	border-radius: 5px;
+	outline: none;
 	background-color: #03a9f4;
 	position: relative;
 	top: 35px;
@@ -258,20 +283,9 @@ header {
 }
 #cate-div .nav-div {
 	height: 30px;
-	background-color: #bde936; 
+	background-color: #bde936;
 	text-align: center;
 }
-#overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	background-color: #000;
-	opacity: 0.7;
-	display: none;
-}
-
 #edit-cate {
 	display: none;
 }
@@ -281,4 +295,15 @@ header {
 	font-size: 16px;
 	line-height: 30px;
 	padding: 0 10px;
+}
+/*新增分类end*/
+#overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: #000;
+	opacity: 0.7;
+	display: none;
 }
